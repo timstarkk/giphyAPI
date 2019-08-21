@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>giphy api</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="area"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // The below code fills in the first row of the table
+
+        function searchTerm(search) {
+            const queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=CqZy82L3gwNLs4EHQAOzV3mswCe9WE6U&limit=5";
+            $.ajax({
+                url: queryURL,
+                method: "GET",
+                contentType: 'text/html',
+            }).then(function (response) {
+                const { data } = response;
+                const one = data[0].url;
+                const two = data[1].url;
+                const three = data[2].url;
+                const four = data[3].url;
+                const five = data[4].url;
+
+                console.log(response);
+                console.log(data);
+                $('#area').append(`<img src="${one}">`)
+            });
+        }
+
+        // Repeat the above logic to add rows for two more movies of your choice
+        searchTerm('taco');
+    // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
+    </script>
+</body>
+
+</html>
