@@ -16,7 +16,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-        // The below code fills in the first row of the table
 
         function searchTerm(search) {
             const queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=CqZy82L3gwNLs4EHQAOzV3mswCe9WE6U&limit=5";
@@ -38,9 +37,7 @@
             });
         }
 
-        // Repeat the above logic to add rows for two more movies of your choice
         searchTerm('taco');
-    // BONUS: Once complete, try to make your code as DRY as possible through the use of functions
     </script>
 </body>
 
