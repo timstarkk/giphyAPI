@@ -22,22 +22,26 @@
             $.ajax({
                 url: queryURL,
                 method: "GET",
-                contentType: 'text/html',
             }).then(function (response) {
                 const { data } = response;
-                const one = data[0].embed_url;
-                const two = data[1].embed_url;
-                const three = data[2].embed_url;
-                const four = data[3].embed_url;
-                const five = data[4].embed_url;
+                const one = data[0].images.original.url;
+                const two = data[1].images.original.url;
+                const three = data[2].images.original.url;
+                const four = data[3].images.original.url;
+                const five = data[4].images.original.url;
 
                 console.log(response);
                 console.log(data);
                 $('#area').append(`<img src="${one}">`)
+                $('#area').append(`<img src="${two}">`)
+                $('#area').append(`<img src="${three}">`)
+                $('#area').append(`<img src="${four}">`)
+                $('#area').append(`<img src="${five}">`)
             });
         }
 
-        searchTerm('taco');
+        term = prompt("enter a search term: ")
+        searchTerm(term);
     </script>
 </body>
 
